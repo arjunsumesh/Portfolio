@@ -1,0 +1,75 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:      #0d0d0d;
+  --bg2:     #151515;
+  --bg3:     #1c1c1c;
+  --accent:  #c8f55a;
+  --accent2: #7df5c8;
+  --text:    #f0ede6;
+  --muted:   #888888;
+  --border:  rgba(255, 255, 255, 0.08);
+  --card:    #161616;
+  --radius:  16px;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+nav {
+  position: fixed;       /* stays at top even when scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;          /* sits above everything else */
+
+  display: flex;
+  justify-content: space-between;  /* logo left, links right */
+  align-items: center;             /* vertically centered */
+
+  padding: 1.2rem 2.5rem;
+  background: rgba(13, 13, 13, 0.85); /* slightly transparent dark */
+  backdrop-filter: blur(12px);         /* blurs content behind nav */
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;   /* removes the bullet dots */
+}
+
+.nav-links a {
+  color: var(--muted);
+  text-decoration: none;    /* removes underline */
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;   /* smooth colour change on hover */
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
